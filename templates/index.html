@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista zadań</title>
+</head>
+<body>
+    <center>
+        {% for id, name, task  in result %}
+            <p>Kto: {{ name }}</p>
+            <p>Co do zrobienia: {{ task }}</p>
+<form method="POST" action="{{ url_for('delete_task', task_id=id) }}">
+    <input type="hidden" name="_method" value="DELETE">
+    <button type="submit">Delete</button>
+</form>
+    <a href="{{ url_for('update_task', task_id=id ) }}">Edytuj</a>
+
+        {% endfor %}
+
+        <br>
+        <a href="{{ url_for('add_task') }}">Dodaj zadanie</a>
+    </center>
+</body>
+</html>

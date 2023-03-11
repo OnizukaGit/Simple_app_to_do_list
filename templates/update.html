@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<center>
+<form method="POST" action="{{ url_for('update_task', task_id=id) }}">
+    Kto: <input type="text" name="name" value="{{ name }}"> <br>
+    Zadanie: <input type="text" name="task" value="{{ task }}">
+    <input type="submit" value="Aktualizuj">
+</form>
+</center>
+</body>
+</html>
